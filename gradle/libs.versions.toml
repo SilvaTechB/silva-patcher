@@ -1,4 +1,5 @@
 [versions]
+silva-library = "1.3.0"
 android = "4.1.1.4"
 android-tools = "8.5.2"
 apktool-lib = "2.11.2.r3"
@@ -28,6 +29,8 @@ kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serializa
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 multidexlib2 = { module = "app.morphe:multidexlib2", version.ref = "multidexlib2" }
+silva-library-android = { module = "app.silva:silva-library-android", version.ref = "silva-library" }
+silva-library-jvm = { module = "app.silva:silva-library-jvm", version.ref = "silva-library" }
 smali = { module = "com.github.iBotPeaches.smali:smali", version.ref = "smali" }
 
 [plugins]

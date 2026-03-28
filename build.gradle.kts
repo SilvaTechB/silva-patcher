@@ -55,6 +55,13 @@ repositories {
             password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
         }
     }
+    maven {
+        url = uri("https://maven.pkg.github.com/SilvaTechB/silva-library")
+        credentials {
+            username = project.findProperty("gpr.user") as String? ?: System.getenv("GITHUB_ACTOR")
+            password = project.findProperty("gpr.key") as String? ?: System.getenv("GITHUB_TOKEN")
+        }
+    }
 }
 
 dependencies {
@@ -62,6 +69,8 @@ dependencies {
         // Exclude, otherwise the org.w3c.dom API breaks.
         exclude(group = "xerces", module = "xmlParserAPIs")
     }
+
+    implementation(libs.silva.library.jvm)
 
     implementation(libs.bcpkix.jdk18on)
     implementation(libs.apktool.lib)
