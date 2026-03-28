@@ -126,6 +126,8 @@ publishing {
         create<MavenPublication>("silva-patcher-publication") {
             from(components["java"])
 
+            groupId = "app.silva"
+            artifactId = "silva-patcher"
             version = project.version.toString()
 
             pom {
@@ -158,6 +160,10 @@ publishing {
 }
 
 signing {
-    useGpgCmd()
-    sign(publishing.publications["silva-patcher-publication"])
+    val gpgKey = System.getenv("GPG_PRIVATE_KEY")
+    val gpgPassphrase = System.getenv("GPG_PASSPHRASE")
+    if (!gpgKey.isNullOrBlank() && !gpgPassphrase.isNullOrBlank()) {
+        useInMemoryPgpKeys(gpgKey, gpgPassphrase)
+        sign(publishing.publications["silva-patcher-publication"])
+    }
 }
