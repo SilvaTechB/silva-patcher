@@ -9,7 +9,7 @@ plugins {
     jacoco
 }
 
-group = "app.morphe"
+group = "app.silva"
 
 tasks {
     processResources {
@@ -105,7 +105,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/MorpheApp/morphe-patcher")
+            url = uri("https://maven.pkg.github.com/SilvaTechB/silva-patcher")
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
                 password = System.getenv("GITHUB_TOKEN")
@@ -114,15 +114,15 @@ publishing {
     }
 
     publications {
-        create<MavenPublication>("morphe-patcher-publication") {
+        create<MavenPublication>("silva-patcher-publication") {
             from(components["java"])
 
             version = project.version.toString()
 
             pom {
-                name = "Morphe Patcher"
-                description = "Patcher used by Morphe."
-                url = "https://Morphe.software"
+                name = "Silva Patcher"
+                description = "Patcher used by Silva."
+                url = "https://github.com/SilvaTechB/silva-patcher"
 
                 licenses {
                     license {
@@ -133,15 +133,15 @@ publishing {
                 }
                 developers {
                     developer {
-                        id = "Morphe"
-                        name = "Morphe"
-                        email = "contact@morphe.software"
+                        id = "SilvaTechB"
+                        name = "SilvaTechB"
+                        email = "contact@silva.software"
                     }
                 }
                 scm {
-                    connection = "scm:git:git://github.com/MorpheApp/morphe-patcher.git"
-                    developerConnection = "scm:git:git@github.com:MorpheApp/morphe-patcher.git"
-                    url = "https://github.com/MorpheApp/morphe-patcher"
+                    connection = "scm:git:git://github.com/SilvaTechB/silva-patcher.git"
+                    developerConnection = "scm:git:git@github.com:SilvaTechB/silva-patcher.git"
+                    url = "https://github.com/SilvaTechB/silva-patcher"
                 }
             }
         }
@@ -150,5 +150,5 @@ publishing {
 
 signing {
     useGpgCmd()
-    sign(publishing.publications["morphe-patcher-publication"])
+    sign(publishing.publications["silva-patcher-publication"])
 }

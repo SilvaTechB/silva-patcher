@@ -1,6 +1,6 @@
-rootProject.name = "morphe-patcher"
+rootProject.name = "silva-patcher"
 
-// Include Morphe forks of libraries as composite builds if they exist locally
+// Include Silva forks of libraries as composite builds if they exist locally
 mapOf(
     "ARSCLib" to "com.github.MorpheApp:arsclib",
     "multidexlib2" to "app.morphe:multidexlib",
